@@ -1,0 +1,31 @@
+{{define "editar" }}
+{{template "cabecera" }}
+
+<div class="card">
+    <div class="card-header">
+        Empleados
+    </div>
+    <div class="card-body">
+        <form method="POST" action="/actualizar">
+            <div class="form-group">
+                <input type="hidden" class="form-control" name="id" id="id" value={{.Id}}>
+            </div>
+            <div class="form-group">
+              <label for="">Nombre
+              </label>
+              <input type="text" name="nombre" id="nombre" value={{.Nombre}} class="form-control" placeholder="" aria-describedby="helpId">
+              <small id="helpId" class="text-muted">Escribe tu Nombre</small>
+            </div>
+            <div class="form-group">
+              <label for="">Correo</label>
+              <input type="email" class="form-control" name="correo" id="correo" value={{.Correo}} aria-describedby="emailHelpId" placeholder="">
+              <small id="emailHelpId" class="form-text text-muted">Escribe tu correo</small>
+            </div>
+            <button type="submit" class="btn btn-success">Editar Empleado</button>
+            <a name="" id="" class="btn btn-primary" href="/" role="button">Canelar</a>
+        </form>
+    </div>   
+</div>
+
+{{template "pie" }}
+{{end}}
